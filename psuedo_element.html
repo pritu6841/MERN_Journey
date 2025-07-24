@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p1::before{
+            content: "My ";
+            /* color: blue; */
+        }
+        #p1::after{
+            /* content: url(multi_media/ritz.jpg); */
+            /* width:  10px;
+            height: 10px; */
+            position: relative;
+            left: 100px;
+        }
+        .under li::before{
+            content: "\25ba";
+        }
+        ::marker{
+            color: maroon;
+            font-size: 50px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <p id="p1">paragraph1</p>
+    <p id="p2">paragraph2</p>
+    <p id="p3">paragraph3</p>
+
+    <ul class="under">
+        <li class="li1">list1</li>
+        <li class="li2">list2</li>
+        <li class="li3">list3</li>
+        <li class="li4">list4</li>
+    </ul>
+    
+</body>
+</html>

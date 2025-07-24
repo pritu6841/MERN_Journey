@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .header ,.content, .aside1, .aside2, .myFooter{
+            /* display: flex; */
+            padding: 10px;
+            height: 100px;
+            width: 100%;
+            border: 2px solid black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header{
+            font-size: 20px;
+        }
+        .content{
+            height: auto;
+        }
+        .container{
+            display: flex;
+            height: 100px;
+            background-color: rgba(76, 175, 80, 0.5);
+            backdrop-filter: blur(10px);
+            justify-content: space-between;
+            /* -webkit-backdrop-filter: blur(10px); */
+            opacity: 1;
+        }
+        .nav{
+            margin: 0;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav li{
+            list-style: none;
+        }
+        .nav li > a{
+            text-decoration: none;
+            color: black;
+            /* padding: 10px; */
+            /* border: 1px solid black; */
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        @media screen and (max-width:767px){
+            body{
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .header{
+                /* order: 6; */
+                flex: 1 1 100%;
+            }
+            .container{
+                flex: 1 1 100%;
+                /* order: 3; */
+            }
+            .content{
+                flex: 1;
+                order: 4;
+            }
+            .aside1{
+                flex:1;
+                order: 3;
+                
+                /* height: 100%; */
+            }
+            .myFooter{
+                flex:1 1 100%;
+                order: 6;
+            }
+            .aside2{
+                flex: 1;
+                order: 5;
+            }
+        }
+        @media screen and (max-width: 400px){
+            body{
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .header{
+                /* order: 6; */
+                flex: 1 1 100%;
+            }
+            .container{
+                flex: 1 1 100%;
+                /* order: 3; */
+            }
+            .content{
+                flex: 1 1 100%;
+                order: 3;
+            }
+            .aside1{
+                flex:1;
+                order: 4;
+                
+                /* height: 100%; */
+            }
+            .myFooter{
+                flex:1 1 100%;
+                order: 6;
+            }
+            .aside2{
+                flex: 1;
+                order: 5;
+            }
+        }
+        </style>
+</head>
+
+<body >
+    <header class="header">MY header</header>
+    <nav class="container">
+        <!-- <img src="multi_media/ritz.jpg" alt="" height="100px" width="100px"> -->
+        <ul class="nav">
+            <li class="lst1"><a href="">List1</a></li>
+            <li class="lst2"><a href="">List2</a></li>
+            <li class="lst3"><a href="">List3</a></li>
+            <li class="lst4"><a href="">List4</a></li>
+            <li class="lst5"><a href="">List5</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt temporibus sit officiis excepturi libero autem ipsum ipsam cumque dolore officia quibusdam quidem nulla quas, provident quod ea ad voluptatum quis?
+        Rerum nemo accusantium possimus id adipisci autem perferendis aut sunt? Quaerat repellat culpa fugit nostrum obcaecati, facilis quae sunt vel, aliquam et id dignissimos perferendis nihil autem, voluptate esse. Ut!
+        Cupiditate ipsam esse non qui illo magni rerum assumenda nemo dolorem quo. Quod, soluta dolorem. Corrupti repudiandae exercitationem deleniti. Ab illo perspiciatis expedita labore pariatur et non molestias placeat quidem.
+        Vitae cum voluptates, laudantium ut officiis quidem, perferendis voluptatum quia vel repellat mollitia. Sequi ipsa eveniet omnis, a autem vel. Optio doloribus qui possimus magni est nobis dicta enim reiciendis?
+    </div>
+    <div class="aside1">
+        Aside 1
+    </div>
+    <div class="aside2">
+        Aside2
+    </div>
+    <div class="myFooter">
+        My Footer
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+1) how to add ?? 
+a) inline b)internal using style tag 3)external
+
+2) style ko upper aur niche likhne se fark aayega , ( baad mai likhege to phela ka content overwrite ho jayega)
+
+3) background-image:url() // background image set krne ke liye
+
+properties- 
+a) background-attachment: fixed; // isse image scroll ke sath khud repeat nhi hogi ( image fix rhegi , baki cheeze scroll hogi)
+
+b) background-repeat  // by default image dono direction mai repeat hoti
+values -  no-repeat,repeat-x,repeat-y 
+
+c) background-position : center center  (phela parameter - x-axis se and dusra y-axis)
+values - left , right , top ,bottom , center  
+	 px mai , % mai
+
+note - agar ek hi parameter doge to dusra parameter by default center consider hoga
+
+d) background-size // ye batayega ki bg image ka size kya hai
+values) cover - pura bg cover krega
+	contain - image ka ratio utna hi rhega aur x,y direction mai tab tk expend krege jab tk koi ek axis ki screen puri Tarah se image se cover ho jaye
+	px , % ,vw-vh , 
+
+4) background-image: linear-gradient(orange , white , green )  
+   ye page ko alag alag color ke section mai divide kr dega
+   
+note - background-attachment: fixed;   ye property use kro pura page jisse same size ke color mai divide ho jaye
+
+how to set direction ?? 
+1st parameter batayega direction 
+ex- background-image: linear-gradient(to left , orange , white , green ) ;
+
+to top right - diagonal direction mai
+
+types of gradient - 
+a) linear-gradient 
+b) radial-gradient // circle 
+c) conic-gradient // cone shape
+
+5) text properties
+
+a) line-height - vertically align krta hai (line ke bich ki spacing )
+b) text-align - text ka alignment - left , right , center 
+		justify - ye bhut jaruri hai . iski wajh se sari line ek-dusre ke niche se start hogi , properly align-formatted hogi
+c) text-decoration - underline krne ke liye( kewal underline nhi , uper ya niche ya middle mai lines )
+   text-decoration - underline dotted ( line dotted format mai ayegi)
+d) text-indent - first line kaha se start hogi ye batane ke liye 
+text-indent - 20px ;   // 1st line 20px baad se shuru hogi
+e) text-transform - text ka case batane ke liye - lowercase , uppercase etc
+
+f) text-shadow - 
+3 parameters
+1- shadow ko right,left side mai krne ke liye . +ve - right side , -ve - left side
+2- shadow ko uper niche krne ke liye . 
+3- spread - ye value ko failata hai + blur krta hai
+
+6) border- 2px solid red  (width , type of border , color )
+   ( inka koi sequence nhi hota hai , aage piche bhi likh sakte )
+
+border ko har direction mai alag bhi set kr skte , like border-rigth - 4px , border-left - 8px
+
+7) box-shadow - box mai shadow add krne ke liye.
+4 parameters
+1- x-axis 2-y-axis(top-bottom) 3- spread+blur 4- 
+
+8) opacity - ye element ko transparent banane ke liye use kra jata hai.  value between 0 to 1 .
+
+drawback of opacity - iski wajh se element ke ander ka content bhi transparent ho jayega.
+
+solution ?? - background-color ko rgba mai dege . isse kewal background hi transparent hoga - ander ke text ya content nhi hoge ( tabhi ye practically jyada use hota hai)
+
+9)  div - block element , span - inline element 
+
+convert inline element to block and vice versa - using display : block ;
+
+note - span per height and width ko set nhi kr skte . 
+aisa krne ke liye - display : inline-block ;
+
+10) display - block , inline , none , inline-block
+
+display : none - ye krne se element remove ho jayega aur uski jagah to koi aur element present hai wo le lega
+
+ques - display : none; ke baad element ko waps laane ke liye kya kre ???
+ans - display:block ;
+
+11) visiblity : hidden ; - ye krne se element gayab ho jayega aur uski jagah aise hi khaali rhegi koi aur element nhi le payega
+
+wapas laane ke liye visiblity : visible ;
+
+12) position -  5 types 
+
+a) static (default value ) - 
+			* The element appears in the normal document flow.
+			* static positioned element are not affected by the top , bottom , left , right
+b) relative - set position relative to its original position
+		* remaining elements iss element ki position ko nhi le sakte hai
+		* ye baki ke elements ke upper jaa sakta hai ( unhe overlap krta hai )
+
+c) absolute -   * set position relative to its nearest positioned ancestor 
+		* agar koi positioned ancestor nhi h to relative to document body
+		* Removed from normal document flow
+
+d) fixed-* Always stays in the same place on the screen, even when scrolling.
+	 * Relative to the browser window (viewport).
+
+e) sticky 
+
+13) selectors - 
+a) element selector b) id selector c) class selector d) 
+
+14) use of google font -
+	import - external css ke liye
+	link - kewal usi page ke liye
+
+15) combinators - explain relationship between the selectors
+	types -
+	a) descendant selector(space)		 div p   div ke ander ke saare p (child , grandchild , great grandchild sab allowed )
+	b) child selector(>)			 div>p   div ka direct child ( no grandchild , great grandchild allowed )
+	c) Adjacent Sibling Combinator (+) 	 div+p   div ke baad ka next element  ( neighbour matlb usi level per jo hoga ) (only just next element )
+	d) General Sibling Combinator (~) 	 div~p   div ke baad jitne bhi element aayege usi level per wo sab	
+
+16) pseudo class or pseudo element - ye kisi particular element pr depend krti h jaise jb hm element ko ovr krte h tb css apply ho jati h
+	pseudo matlab - jo hai nhi (pseudo means pretended)
+	ye hmesha actual mai present nhi hoti hai , per jab element per focus aata hai tab pseudo class ki css apply ho jati hai. jab focus hat jata hai to css bhi hat jati hai 
+	( jab element ki state change hoti tab ye apply hoti) , it depends on user interaction like hover , click .
+
+pseudo element - insert content that is not explicitly present in the html document
+
+17) p:not(#p2) -
+	jis paragraph (p) ki id p2 hai , uspe implement nhi hoga baki sab p per hoga.
+
+
+*jb psudeo class ka code hota h tb : ek hi colon lgta h
+*jb psuedo element ke lilye do :: oon lgta h
+18) psuedo element- ye hmare kisi bhi element ke phle/ baad me text add krn ka kaam krta h
+	* :: before - yr kisi bhi html element ke phle add krta h
+		        #p1::before{content: "My ";}
+         		   
+        * :: after - ye kisi bhi html element ke baad me add krta h
+			#p1::after{ content: url(multi_media/ritz.jpg);}
+19) \25ba - special character 
+
+20) ::marker - It is used for making changes in the bullets of the html
+             - the ::marker pseudo-element is used to style the markers of list items, such as bullets or 
+               numbers in <ul> or <ol>
+				li::marker { color: red; font-size: 20px; }
+
+21) media query - Used for responsive designing
+	
+	Basic Syntax - @media media-type and (condition) {
+ 			 /* CSS rules */
+			}	
+
+	Media Ranges for different devices
+| Device Type                | Width Range      | Example Media Query                                  |
+| -------------------------- | ---------------- | ---------------------------------------------------- |
+| **Mobile (Small)**         | 0px to 480px     | `@media (max-width: 480px)`                          |
+| **Mobile (Medium)**        | 481px to 767px   | `@media (min-width: 481px) and (max-width: 767px)`   |
+| **Tablet (Portrait)**      | 768px to 1024px  | `@media (min-width: 768px) and (max-width: 1024px)`  |
+| **Tablet (Landscape)**     | 1025px to 1200px | `@media (min-width: 1025px) and (max-width: 1200px)` |
+| **Laptop/Desktop (Small)** | 1201px to 1440px | `@media (min-width: 1201px) and (max-width: 1440px)` |
+| **Large Desktop**          | 1441px and above | `@media (min-width: 1441px)`                         |
+
+
+<!--
+    < 576 px - Extra small devices (phones)
+    576 px to 767 px - Small devices (tablets) 
+    768 px to 991 px - Medium devices (desktops)
+    992 px to 1199 px - Large devices (large desktops)
+    1200 px and above - Extra large devices (extra large desktops)
+     -->
+22) CSS Media type
+all- for all devices
+print - used for print preveiw mode - (print krte time kaisa milega)
+screen - used for computer screen tablets, smart phone etc;
+
+23) Media query condition ()-
+	*orientation: landscape/portrait (height>width = landscape, width > landscape = portrait)
+	* max-width - Iska mtlb isme jo width di gyi hogi usse km jo km me css apply ho jaegi(e.g, max-with:768 -0 se 768 px tk)
+	*min-width - Iska mtlb isse jyada jaise hi browser ka size hoga to iski css apply ho jaegi(e.g, min-width - 768px se aage)
+
+		
+
+24) FLex Box - Iske andr bhot sare element hote h jo jo axis me define hote x asix(main origin) aur y axis(cross origin)
+
+* flex-direction - row, column(ek colom me jaise sare element aate h waise vertical ho jate h), row-reverse, col-reverse
+*justify-content - alignment along the main axis
+	-> flex-start, flex, end, cnetre, space-evenly, space-around, space-between
+*align-item - aligenmet under cross origin
+*flex-wrap - nowrap(sare box ek hi line me aayege regardles their height or width),
+	     wrap(It used to put element in the other column /row when required(jb box jyada ho hieght ya width se)
+
+25) Flex properties - 
+			i)flex-flow - row wrap; (It is used when we want to give both flex-direction and flex-wrap properties together)
+			ii)order - The order property specifies the order of the flex items inside the flex container.
+			iii)flex-grow - The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items.
+					flex-grow:1 //Iska mltb jitna space bcha tha usne usko equally divide krliya 
+			iv)flex-shrink - // jiska flex shrink 3 hai wo sabse chota (matlab sabse jyada shrink hua)'
+			v) flex-basis- kisi element ko initial size deta h
+---------------------------------------------------------------------------------------------------------------------------
+**Notes - Flex grow ki value jiski jyada hogi wo utne times dusre elemetn se jyada grow krega
+
+**Notes - Shorthand for flex properties
+	flex: 1 1 100px; /* shorthand for flex-grow, flex-shrink, flex-basis */
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+26)  2d  tranforms
+
+ a) translate - 
+ 
+properties - a) translateX(100px) x axis per 100px aage move krega
+	     b) translateY(150px) y axis per 150px aage move krega
+	     c) transform: translate(100px,100px); - x aur y axis per move krega
+
+ b) rotate(45deg) - 45 degree se rotate krega
+
+ c) transition : 1s all ;
+
+ d) scale(2) - current size ka 2x ho jayega
+      scaleX(3) - x axis mai size ka 3x ho jayega
+      scaleY(3)
+
+e) skew(20deg,20deg)  - 20 deg se mud jayega (bend ho jyega) dono axis per
+      skewX and skewY														

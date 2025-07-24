@@ -1,0 +1,269 @@
+
+---
+
+### 1) `<hr>` Tag – Horizontal Rule
+
+**Description:**
+`<hr>` tag ka use hota hai ek horizontal line draw karne ke liye jo content ke sections ko visually alag karta hai. Yeh headings ke bina bhi sections break karne mein helpful hota hai.
+
+✅ **Use-cases:**
+
+* Blog posts ya FAQs mein topics ko separate karna
+* Forms ke andar parts ko visually divide karna
+
+🔹 **Properties:**
+
+* `align="left" | "center" | "right"` – Line ki alignment decide karta hai
+
+📝 *Note:* Yeh ek visual separator hota hai, koi semantic meaning nahi hota.
+
+---
+
+### 2) `<em>` Tag – Emphasized Text
+
+**Description:**
+`<em>` tag ka use hota hai kisi text ko **emphasis** dene ke liye. Iska visual result hota hai *italic text*. Semantic markup ke liye bhi useful hai – screen readers isko emphasis ke roop mein padhte hain.
+
+---
+
+### 3) `<font>` Tag – Font Customization (Deprecated)
+
+**Description:**
+`<font>` tag ka use hota tha text ka color, size, aur font face set karne ke liye. Yeh ab deprecated hai, CSS is preferred.
+
+🔸 **Attributes:**
+
+| Attribute | Description                                         |
+| --------- | --------------------------------------------------- |
+| `color`   | Text ka color set karta hai (e.g. `color="blue"`)   |
+| `size`    | Font size 1–7 tak set karta hai                     |
+| `face`    | Font family specify karta hai (e.g. Arial, Verdana) |
+
+📝 *Note:*
+
+* Yeh attributes sirf `<font>` ke andar kaam karte hain.
+* Agar `<p>` ya kisi aur tag mein use karna hai:
+
+  * Wrap it inside `<font>`
+  * Or use CSS instead
+
+---
+
+### 4) `<a>` Tag – Anchor / Hyperlink
+
+**Description:**
+Anchor tag se hum kisi bhi text ya image ko **clickable link** bana sakte hain. Yeh web page navigation ka core feature hai.
+
+🔸 **Attributes:**
+
+* `href`: Destination URL
+* `target`: Link ka open hone ka tareeka
+
+  * `_self`: Same tab
+  * `_blank`: New tab
+
+📌 **Special Uses:**
+
+* `href="tel:1234567890"` – Direct call dial karega
+* `href="mailto:abc@gmail.com"` – Email app open karega
+* `mailto:` ke sath subject aur body bhi:
+
+```html
+<a href="mailto:abc@gmail.com?subject=Hello&body=This is a test">Mail</a>
+```
+
+---
+
+### 5) `<fieldset>` Tag – Grouping Form Fields
+
+**Description:**
+Forms ke input elements ko **visually group** karne ke liye use hota hai. Box ke form mein appear hota hai.
+
+🔹 **Sub-element:**
+
+* `<legend>`: Fieldset ka title/heading dikhata hai (alignable: `left`, `right`, `center`)
+
+---
+
+### 6) `<table>` Tag – Tabular Data Representation
+
+**Description:**
+Structured data dikhane ke liye table use hoti hai. Rows (`<tr>`) and columns (`<td>`/`<th>`) ka use hota hai.
+
+🔹 **Main Parts:**
+
+* `<thead>`: Header section
+* `<tbody>`: Main content
+* `<tfoot>`: Footer
+* `<caption>`: Table heading/title
+
+📝 *Important Notes:*
+
+* HTML output mein order predefined hota hai (even if you change it in code)
+* Alignment har tag mein use ho sakta hai
+* Single line draw karne ke liye: `cellspacing="0"`
+
+---
+
+### 7) `<embed>` Tag – Multimedia Content
+
+**Description:**
+Web page ke andar directly audio, video, PDF, ya koi bhi multimedia content show karne ke liye `embed` tag use hota hai.
+
+---
+
+### 8) `<video>` Tag – Video Embedding
+
+**Description:**
+Webpage pe video content show karne ke liye `video` tag use hota hai.
+
+🔸 **Attributes:**
+
+* `controls`: Playback controls dikhata hai
+* `controlslist="nodownload nofullscreen"`: Kuch controls disable karta hai
+* `muted`: Mute by default
+* `poster`: Thumbnail image before play
+* `autoplay`: Auto play video
+* Multiple `<source>` allowed – jo pehle compatible hoga woh chalega
+
+---
+
+### 9) `<audio>` & `<object>` Tags – Media Embedding
+
+**Description:**
+
+* `audio`: Audio files play karne ke liye
+* `object`: PDFs or other media objects embed karne ke liye
+
+---
+
+### 10) `<marquee>` Tag – Scrolling Content
+
+**Description:**
+Text ya image ko scrolling effect dene ke liye use hota hai. Animated view create karta hai.
+
+🔸 **Attributes:**
+
+* `behavior`: `scroll`, `slide`, `alternate`
+* `direction`: `left`, `right`, `up`, `down`
+* `scrollamount`: Speed define karta hai
+* Events: `onmouseover="stop()"`, `onmouseout="start()"`
+
+---
+
+### 11) `<input>` Tag – Form Inputs
+
+**Description:**
+User se alag-alag type ka data lene ke liye use hota hai. Har type ke liye `type` attribute define karna hota hai.
+
+🔹 Types:
+
+* `text`, `password`, `email`, `radio`, `checkbox`, `date`, etc.
+
+📝 *Special Cases:*
+
+* **Radio**: Same name dene se only one select ho sakta hai
+* **Checkbox**: Multiple selections allowed
+
+---
+
+### 12) `<select>` Tag – Dropdown Menu
+
+**Description:**
+Dropdown list banane ke liye use hota hai.
+
+🔹 Features:
+
+* `multiple`: Multi-select enable karta hai
+* `disabled`, `selected`: Option ko disable ya default select karta hai
+
+---
+
+### 13) `<optgroup>` Tag – Grouping Dropdown Options
+
+**Description:**
+Dropdown ke options ko categories mein divide karne ke liye.
+
+---
+
+### 14) `<datalist>` Tag – Searchable Dropdown
+
+**Description:**
+Input field ke andar suggestion list dene ke liye, jisse user search kar ke select kar sake.
+
+---
+
+### 15) `<input type="number">` – Numeric Input
+
+**Description:**
+User se sirf numeric value lene ke liye. `min`, `max`, aur `step` se validation apply hoti hai.
+
+---
+
+### 16) `<input type="hidden">` – Hidden Input
+
+**Description:**
+User ko dikhai nahi deta lekin form ke sath data submit hota hai. Mostly tracking, session, ya fixed value bhejne ke liye use hota hai.
+
+---
+
+### 17) Buttons in Form
+
+**Description:**
+Form ke andar actions perform karne ke liye – jaise submit, reset, ya custom JavaScript action.
+
+🔹 Types:
+
+* `submit`, `reset`, `button`, `image`
+* `<button>` tag mein text ya emoji bhi add kar sakte ho
+
+📝 *Note:* Ye tabhi kaam karte hain jab form ke andar ho.
+
+---
+
+### 18) `<textarea>` – Multi-line Input
+
+**Description:**
+Long text input ke liye, jaise feedback, comments, description.
+
+---
+
+### 19) `<form>` Tag – User Data Submission
+
+**Description:**
+User ke input ko server tak bhejne ke liye form ka use hota hai.
+
+🔸 **Important Attributes:**
+
+* `action`: URL jahan data bhejna hai
+* `method`: `POST` ya `GET`
+* `autocomplete="off"`: Previous input suggestions disable
+* `novalidate`: Validation disable karta hai
+
+📝 *Note:* Har input ko `name` dena zaroori hai – isse server ko field identify karne mein madad milti hai.
+
+---
+
+### 20) Image Map – Clickable Areas on Image
+
+**Description:**
+Ek hi image ke alag-alag parts pe alag links assign karne ke liye `map` aur `area` tags ka use hota hai.
+
+🔹 **How it works:**
+
+```html
+<img src="image.jpg" usemap="#mymap" width="600" height="500">
+<map name="mymap">
+  <area shape="circle" coords="100,200,200" href="https://youtube.com">
+  <area shape="rect" coords="300,400,700,1000" href="https://google.com">
+  <area shape="poly" coords="30,0,100,0,150,100,100,200,300,200,0,100" href="https://google.com">
+</map>
+```
+
+🔸 **Shapes and Coordinates:**
+
+* `circle`: `x, y, radius`
+* `rect`: `x1, y1, x2, y2`
+* `poly`: Multiple x,y pairs
+
+📝 *Note:* Yeh tag ek image ko interactive banata hai jisme multiple links assign kiye ja sakte hain.

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <embed src="multi_media/one.mp4" height="300px" width="400px"> -->
+    <!-- <embed src="./multi _media/song1.mp3" height="100px" width="400px"> -->
+
+
+        <!-- For multimedia uses in brower -->
+        <video controls controlslist = "nodownload nofullscreen"  muted width="400px" height="300px" poster="multi_media/ritz.jpg">
+            <source src="multi_media/one.mp4" type="video/mp4">
+        </video>
+
+        <audio controls>
+            <source src="multi_media/song1.mp3" type="audio/mpeg">
+        </audio>
+
+        <object data="multi_media/clg_Id2_compressed.pdf"  type="application/pdf" width="500px" height="500px"></object>
+
+        <!-- For animation --> 
+         <marquee behavior="slide" onmouseover="stop()" onmouseout="start()" direction="right" scrollamount="">This is marquee Tag<img src="multi_media/ritz.jpg" height="100px" width="100px" alt="Sorry"></marquee>
+</body>
+
+</html>

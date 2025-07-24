@@ -1,0 +1,110 @@
+Mongo DB
+
+ - It used Collections(RDBMS - Table h to use Mongo-bs me collection khege)
+ - It is Schema less
+ - mongo Db - fields
+ - Vectircal Scalling - Jb hm machine me hi storage ko divide krte jate h yha koi dusri machine  nhi aati h (data store krne ke liye)(eq. jaise mera laptop 512gb storage h lekin wo bhr gyi to ab usko 1tb kr dege)
+ - Horizontal Scalling :- Jb hmne data ko further divide krte h store krne ke liye(Mutlitple device me). 
+
+ 1. Mongo is document oriented no sql
+
+ 2. Schema flexibility - schema-less, to store document with varying structure
+
+ 3. Scalibilty - Designed for horizantal scaling through sharding, 
+		which allow it to distribute the data through various servers easily. suitable for handling large amount of data 
+	- Sharding - Sharding in MongoDB is a method for distributing data across multiple servers (shards) to handle large datasets and high throughput.
+
+ 4. preforamnce - Mongo db store related data in a single document(denormalization)
+ - reduces queries and improve performance
+ - It support embedded document(document ek andr document) complex hirerichal structure can be stored in a document instead of  multiple table
+ - It make data retrival faster
+
+5.It supports complex data types - array, nested documents(For compleex data represenetation)
+
+6.Built in replication and High availabilty - IT make replica of all the data(sara data ki copy bna kr rkhta h kai jgh pr taki koi data loss na ho)
+
+7. It can handle real time analytics efficiently, strong choice for immediate insight for their data.
+
+Step 1:To show all databases
+(i)show databases
+(ii)show dbs
+
+Step 2:To create databases
+(i)use database_name  //Agr database bnane ke baad tmne usme kuch(data) add nhi kiya wo non extixtent database khte h. jo database me show nhi hoga
+
+Step 3:To create collection inside the db
+(i) db.createCollection("students")
+
+this always refers to current object yha (db point kr rha h current databse ko)
+
+For string represenetation we use '' or ""
+
+Step 4:Insert new document
+(i) db.collection_name.insertOne({}) //Syntax
+	db.students.insertOne({
+		StudentName:"Ritu", 
+		StudentAge:20, 
+		Student_Email:"pritu6841@gmail.com",      // If it is correctly inserted it will give someething lie -
+		Student_SGPA:9.2			  //{ acknowledged: true, insertedId: ObjectId('6879d94024a24869e04c58f9')}
+		})
+
+Step 5: Select data from collection 
+(i) db.students.find()
+//(*)- represent all columns
+
+Step 6 : To insert more than one document
+db.students.insertMany([
+	{
+		StudentName:"kaaju",
+		StudentAge:25,
+		Student_Email:"kaaju@gmail.com",
+		StudentStream:"AI/ML",
+		Student_SGPA:9.0,
+		Student_Lan:["Python", "C", "C++"]
+	},
+	{
+		StudentName:"abc",
+		StudentAge:11,
+		Student_Email:"abc@gmail.com",
+		StudentStream:"DataScience"
+		Student_SGPA:8.0,
+		Student_Lan:["R", "Python"],
+		Student_Add:{
+				HouseNo:420,
+				City:"Kanpur",
+				PinCode:2090861
+			}
+	}
+	]) // agr ek se jyada value aa rhi h ya hm pass kr rhe h wo format array kehlata h
+
+7> db.students.find().pretty() //It used to represent data in a pretty way
+ 
+ ~To represent how many data we have in the current collection inside the database
+ > db.students.find().count() //It will represent how many entries we have in the database
+
+Select 8: Select Data
+
+	We use find() method to select a collection
+
+*Selection - It specify selection criteria
+*Projection - Apko kitni value chahiye ye specify krta h(Specify no of fields to return in document that matches the selection critereia)
+	    - This parameter is an object that describe which field to include in the result. Both ifnd method accept a second parameter called projection.
+		This parameter is optional. If omitted all fields will be included in result.
+	
+	db.students.find(selection, projeoction)
+	db.students.find({}, {StudentName:1, Student_Email:1}) // ye kewal hr document(collection ke andr ke document) ki yhi fields ki value aayegi
+	//1 (Includion)ka mtlb hme is field ki value chahiye , 0 (Exclusion)ka mtlb ye field ki values hme nhi chahiye
+	
+	db.students.find({},{studentAge:0, _id:0}) //Includion exclusion ek sath nhi chlega
+
+Except for the (_id)Case -> db.students.find({},{studentAge:1, _id:0})  
+
+
+Query Data
+To query or filter a data we can include a query in our field() or findOne() methods.
+	db.collectionName.find({fieldValue, field2Value,...})
+
+//agr kisi field ki andr wali field chaiye ho to jaise address me se house number (It is necessary to use "" for the address)
+
+	->db.students.find({}, {StudentName:1, Student_Email:1, "Student_Add.HouseNo":1 })
+

@@ -1,0 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manufacturing+Consent&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,400;1,900&display=swap');
+*{
+    font-family: "Manufacturing Consent", sans-serif;
+}
+div h1{
+    border: 2px solide red;
+}
+div > h1{
+    background-color: yellow;
+}
+ /* div  ~ h1{
+    background-color: aqua;
+} */
+input[type="text"]{
+    background-color: pink;
+}
+
+input[placeholder="Enter the phone number"]{
+    background-color: green;
+}
+
+input:valid{
+    background-color: lightsteelblue;
+}
+input:invalid{
+    background-color: red;
+}
+
+.div1{
+    height: 50px;
+    width: 100%;
+    background-color: lightcoral;
+    margin-bottom: 10px;
+}
+
+.div2{
+    height: 50px;
+    width: 100%;
+    background-color: lightblue;
+    /* display: none; */
+    margin-bottom: 10px;
+}
+.div1:hover ~ div:last-child{
+        /* display: block; */
+        background-color: purple;
+    /* display: block; */
+}
+.div3{
+    height: 50px;
+    width: 100%;
+    background-color: lightgreen;
+}
+
+.container{
+    padding-bottom: 10px;
+}
+
+    tbody > tr:last-child{
+        background-color: orange
+    }
+
+    #td1 :not{
+    background-color: blue;
+    color: black;
+}

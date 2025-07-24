@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" autocomplete="off" novalidate>
+    <table border="1" width="500px" align="center" bgcolor="pink" cellspacing="0">
+        <thead>
+            <tr>
+                <td colspan="2" align ="center">
+                    Demo
+                </td>
+            </tr>
+        </thead> 
+        <tbody>
+            <tr>
+                <td>User Name</td>
+                <td><input type="text" placeholder="Enter user name"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" required minlength="5"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type="date" required min="2024-01n -12"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="gen">Male
+                <input type="radio" name="gen">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Hobbies</td>
+                <td>
+                    <input type="checkbox" name="hobby">Reading
+                    <input type="checkbox" name="hobby">Travelling
+                    <input type="checkbox" name="hobby">Gaming
+                </td>
+            </tr>
+
+            <tr>
+                <td>Qualifications</td>
+                <td>
+                    <select name="" id="" > //by using multiple attribute we can select multiple options
+                        <option value="" selected disabled>~~Select~~</option>  
+                        <option value="" >Btech</option>
+                        <option value="">Mtech</option>
+                        <option value="" disabled>BCA</option>
+                        <option value="">MCA</option>
+                        <option value="">BBA</option>
+                        <option value="">MBA</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Home Town</td>
+                <td>
+                    <select name="" id="">
+                        <option value="" selected disabled>~~Select~~</option>
+                        <optgroup label="South India">
+                        <option value="">Hyderabad</option>
+                        <option value="">Bangalore</option>
+                        <option value="">Chennai</option>
+                        </optgroup>
+                        <optgroup label="North India">
+                        <option value="">Delhi</option>
+                        <option value="">Mumbai</option>
+                        <option value="">Kolkata</option>
+                        </optgroup>
+                        <optgroup label="West India">
+                        <option value="">Pune</option>
+                        <option value="">Ahmedabad</option>
+                        <option value="">Jaipur</option>
+                        </optgroup>
+                    </select>
+            </tr>
+
+            <tr>
+                <td>University</td>
+                <td>
+                    <input type="text" list="mylist">
+                    <!-- dataList is used so that we can select or search just by typing -->
+                    <datalist id="mylist">  
+                        <option value="JNTU">JNTU</option>
+                        <option value="OU">OU</option>
+                        <option value="ANU">ANU</option>
+                        <option value="SVU">SVU</option>
+                        <option value="KU">KU</option>
+                        <option value="DU">DU</option>
+                        <option value="PU">PU</option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile No</td>
+                <td><input type="tel" name="" id=""></td>
+            </tr>
+
+            <tr>
+                <td>SGPaA</td>
+                <!-- SGPA can only happend btw 1 to 10 -->
+                <td><input type="number" min="1" max="10" step="0.01"></td>
+            </tr>
+
+            <tr>
+                <td>COlor</td>
+                <td>
+                    <input type="color">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Range</td>
+                <td>
+                    <input type="range" min="99" max="999" name="" id="">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Hidden controls</td>
+                <td>
+                    <input type="hidden" name="" id="">
+                    <!-- Hidden input is not visible to user but it will be submitted -->
+                </td>
+            </tr>
+
+            <tr>
+                <td>Search</td>
+                <td><input type="search"></td>
+            </tr>
+
+            <tr>
+                <td>Select Image</td>
+                <td>
+                    <input type="file" accept="image/*">
+                    <!-- accept is used to select only images -->
+                </td>
+            </tr>
+
+            <tr>
+                <td>Date and Time</td>
+                <td>
+                    <input type="datetime-local">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Month</td>
+                <td>
+                    <input type="month">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Week</td>
+                <td><input type="week"></td>
+            </tr>
+
+            <!-- Buttons -->
+             <tr>
+                <td>
+                    <input type="submit">
+                    <input type="reset">
+                    <input type="button" value="Button">
+                    <input type="image" src="multi_media/ritz.jpg" alt="Submit" width="50px" height="50px">
+
+                    <button type="submit">&#128512;</button>
+                </td>
+             </tr>
+
+             <tr>
+                <td>Address</td>
+                <td>
+                    <textarea name="" id="" rows="5" ></textarea>
+                </td>
+             </tr>
+        </tbody> 
+
+    </table>
+    </form>
+</body>
+</html>
