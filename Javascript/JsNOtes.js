@@ -109,7 +109,6 @@ res = (a+7) = (b-3) = (c+4) // error because we can assign expression to a varia
 but  here c+4 is an expression and b-3 is also an expression we're assigning c+4(expression) value to b-3(expression)
 -------------------------------------------------------------------------------------------------------------------------------------------
 
-Loop - Initialize , condition, Increment
 
 */
 

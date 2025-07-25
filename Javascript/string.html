@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "Hello \"World\"...."
+        console.log(str)
+
+        let name = 'Ritu'
+        let st2 = `Hello ${name}! bebu, kaise ho""?`
+        console.log(st2)
+
+        console.log(st2.indexOf("Ritu"))
+
+        console.log(st2.indexOf('i', st2.indexOf('i')+1)) //
+
+        let st = `Ram, Mohan, Geeta, anita`
+        let r = st.split("\,");
+        console.log(r) //['Ram', ' Mohan', ' Geeta', ' anita']
+
+        
+        let s1 = "234";
+        let s2 = "3";
+        console.log(s1.localeCompare(s2));
+
+        console.log(s1.charAt(1))
+        
+    </script>
+</body>
+</html>

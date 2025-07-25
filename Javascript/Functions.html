@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function greet(a, b){ //Default value agr koi value na di ho to ye value lelo
+            return a*b
+        }
+        let r  = greet()
+        console.log(r) //NAN beacuse we haven't dedfine a and b so udefined * undefined = NaN
+
+        
+        function greet2(a=4, b=5){ //Default value agr koi value na di ho to ye value lelo
+            return a*b
+        }
+        let g  = greet2()
+        console.log(g) 
+
+        //----------------------------------------------------------------------------------
+        function mySum(a, b) {
+            return a+b
+        }
+        console.log(mySum(2,3))
+
+        //-------------------------------------------------------------------------------
+        function mySumRest(a, b, ...c){
+            let sum = 0
+            sum = a+b
+            for(let ele of c){
+                sum += ele
+            }
+            return sum
+        }
+        console.log(mySumRest(100, 200, 300, 400, 500, 700))
+        //--------------------------------------------------------------------------------
+        function greet3(a = 4, b) {
+            return a * b;
+        }
+        let gh  = greet3(undefined, 7)
+        console.log(gh);
+        // 28 beacuse 7 will be assigned to b and a remains 4 
+        // (undefined or 4 me se 4 ko lega undefined ka mtlb hota h varible me kuch nhi lekim default value 4 h to wo usko leleg)
+
+        //------------------------------------------------------------------------------------------------------------------------------------
+        //Anonymous Function OR IIFE -> Immediatly Invoked FUnction Expression
+        (function(){
+            console.log("Anonymouse Function...");
+        })();
+        //-------------------------------------------------------------------------------------------------------------
+        const res = (function(a, b){
+            return a*b;
+        })(2,3)
+        console.log(res)
+
+        //----------------------------------------------------------------------------------------------------------------
+        const result = function(a, b){
+            return a*b;
+        }
+        console.log(result(3,4))
+
+        //---------------------------------------------------------------------------------------------------------------------
+        //Arrow function
+        const fun = (a) => a**4;
+        let pwr = fun(4)
+        console.log(pwr)
+
+        const cal_int = (amt, rate, time) => (amt*rate*time)/100;
+        let interest = cal_int(4, 2, 4)
+        console.log(interest)
+        
+        //Closure
+
+                function outFun(name){
+            console.log("Outer Func...")
+            function innerFun(msg){
+                console.log("Inner Func..")
+                console.log(msg, name)
+            }
+            return innerFun
+        }
+        const inner = outFun("Ritu");
+        console.log(inner)
+        inner("Hello bebu")
+
+    </script>
+</body>
+</html>

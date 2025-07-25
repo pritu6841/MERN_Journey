@@ -10,6 +10,39 @@
     let isRegister = true;
     let isPrime = true;
     if(isRegister && isPrime) console.log("Extra 5% dicount")
+
+    for(let a = 1, b = 10; b>10 , a<=5; a++, b--){
+        console.log("A: " + a, "B: "+b)
+    }
+    
+    let flag = true;
+    for(let i = 1; i<=5 && flag; i++){
+        for(let j = 1; j<=5; j++){
+            
+            console.log(i+" "+ j)
+            if(j==2){
+                flag = false;
+                break;
+            }
+        }
+    }
+
+    let userData = {
+        names : "Ritu",
+        agr : 21,
+        clg: "Allenhouse"
+    }
+
+    let arr = [100, 200, 300]
+    for(idx in arr){  // normal array me in se index milege array se
+        console.log(idx)
+    }
+
+    for(ele in userData){ // in se object me key milegi
+        console.log(ele+" "+userData[ele])
+    }
+
+    //-----------------------------------------------------------------------------------------------------------------
     </script>
 </body>
 </html>

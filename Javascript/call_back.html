@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function myAdd(a, b){
+        //     return a+b
+        // }
+        // function muSub(a, b){
+        //     return a-b
+        // }
+        // function res(a, b, fn){
+        //     return fn(a,b);
+        // }
+        // let r = res(5, 4, myAdd)
+        // console.log(r);
+
+        // r = res(5,4, muSub)
+        // console.log(r);
+        
+        //----------------------------------------------------------------------------------------------------------
+
+        // function myCallBack(ele){
+        //     console.log(ele);
+        // }
+        // let arr = [100, 200, 300, 400]
+        // //forEach hmesa callback function ko call krta h aur arr ke ek ek value ko callback ke andr pass krta h
+        // //aur agr callback koi value return krega to for each ke pass aayegi 
+        // arr.forEach(myCallBack) //hme bs function ka refernce hota h na ki function ko call krna hota h
+        
+        //---------------------------------------------------------------------------------------------------------------------
+
+        // let balance = 0;
+        // function myCallBack(ele){
+        //     if(ele.type == "deposit"){
+        //         balance += ele.amount
+        //         console.log("Deposited Money: "+ele.amount, "Balanace: "+balance)
+        //     }
+        //     else{
+        //         balance -= ele.amount
+        //         console.log("Withdraw Money: "+ele.amount, "Balanace: "+balance)
+        //     }
+        // }
+
+        // let trans = [
+        //     {type:"deposit", amount : 1000},
+        //     {type: "withraw", amount: 500}
+        // ]
+
+        // trans.forEach(myCallBack)
+
+        //-----------------------------------------------------------------------------------------------------------
+        
+        let cities = [
+            {name: "kanpur", pop : 20202020},
+            {name: "lkn", pop: 456789},
+            {name:"meerut", pop:123}
+        ]
+        let city = cities.filter(obj => {
+                if(obj.pop > 1000){ 
+                    
+                    return true
+                }
+        }
+        )
+        console.log(city)
+
+        let c = [];
+        city.forEach(ele=> c.push(ele.name))
+        console.log(c)
+    </script>
+</body>
+</html>
