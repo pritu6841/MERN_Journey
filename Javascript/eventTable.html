@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myBtn">Button</button>
+</body>
+<script>
+    const btn = document.getElementById('myBtn')
+    btn.addEventListener('click', ()=>{
+
+        const tab = document.createElement('table');
+        tab.setAttribute('border','3px')
+        // console.log(tab)
+        let row = tab.insertRow();
+        let col1 = row.insertCell()//row ke andr ek col insert ho jaega
+        col1.textContent = "column1"
+
+        let col2 = row.insertCell()
+        let input = document.createElement('input')
+        input.setAttribute('type', 'text')
+        col2.append(input)
+
+        let col3     = row.insertCell()
+        col3.textContent = "column3"
+
+        console.log(tab)
+
+        document.body.append(tab)
+        // const thead = document.createElement('thead');
+        // tab.append(thead)
+    })
+</script>
+</html>

@@ -1,0 +1,64 @@
+#npm init  - For file configuration(To create the package.json) //but it ask various things for creating it
+
+ye puchega - 
+    
+------------------------------------------------------------------------------------------------------------------------------------------------------
+(a)#npm init -y  -> ek baar me puri package.json bn jaegi
+
+(b)#npm install packageName -g //For global installation (Agr aise install kiya to pure project me use kr paege)
+
+(c)#npm install packageName
+    1. npm install express
+    2. npm uninstall express - for uninstalling the package
+    3. npm install express -save  //for saving the dependencies 
+
+(d)#npm list -> folder me jitne dependencies h  unki list dedega
+    #npm list -g -> global enviroment me jitne bhi package download h wo dikhege
+
+(e)#npm i nodemon -save-dev -> forcefully(-save) install nodemon only for the development(-dev) period
+    npm i nodemon -g  -> install nodemon globall
+    ---------------------------------------------------------------------------------------------------------------------------------------------
+
+creating Script inside the package.json
+    (a)"start": "nodemon index.js" // by typing (npm start) we can now run the server
+    (b)"bebu": "nodemon index.js"  // we're creating another script so  we need to run (npm run bebu) we have to use run for another scripts
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    How to use EJS  - EJS stands for Embedded JavaScript Templates.
+                    In web development (using Node.js + Express), you often need to render 
+                    dynamic HTML pages. EJS allows you to embed JavaScript variables, 
+                    loops, and conditions directly in your HTML.
+
+    (a)Install EJS
+        -npm i ejs -save
+    (b)Create a views folder in Application folder
+    (c)Set view engine in index.js
+        app.set('view engine', 'ejs');
+    (d)Instead of send use render('viewName')
+        app.get('/', (req, res)=>{
+        res.render('default')
+        }) 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+views/adminViews/partials 
+Use of partials folder
+    In an EJS-based Node.js project, the partials folder is used to store reusable EJS components, like:
+headers, footers, navigation bars, sidebars, any repeatable block of HTML content
+
+------------------------------------------------------------------------------------------------------------------------
+How to add images 
+-------------------------------------------------------------------------------------------------------------------------------
+(a) Create "public" folder inside the application folder
+(b) Create images folder inside "public" folder
+(c) write below in index.js
+    app.use(express.static('public'))
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+CSS
+(a) Create "styleSheets" folder inside the public
+(b) Create "style1.css" inside the folder "styleSheets"
+(c) open "header.ejs" , and link "style1.css" file 
+    <link rel="stylesheet" href="styleSheets/style1.css">

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <script></script>
+  </head>
+  <body>
+
+    <!-- button press krne per table aayegi  -->
+    <button id="myBtn">Button 1</button>   
+
+    <!-- table ko iss container mai append kr dege -->
+    <div id="tabContainer"></div>
+
+
+    
+    <script>
+
+        // given data
+        let userData = [
+          {uid:1004 , unm:'sachin' , age:55 , gender:"male" , dept:"CSE"},
+          {uid:1002 , unm:'zaheer' , age:45 , gender:"male" , dept:"CSE"},
+          {uid:1003 , unm:'rahul' , age:48 , gender:"male" , dept:"CSE"},
+          {uid:1001 , unm:'sachin' , age:43 , gender:"male" , dept:"CSE"},
+        ]
+
+        //  function to create table
+        function createTable(data){
+          const myTab = document.createElement('table');
+          myTab.setAttribute('border','2px');
+          myTab.setAttribute('width','500px');
+          myTab.setAttribute('align','center');
+          myTab.setAttribute('bgcolor','#ddd');
+          
+          // creating head and insert row in head
+          const thead = document.createElement('thead');
+          const row_Head = thead.insertRow();
+
+          const keys = Object.keys(userData[0]);  // userData[0] ki sari keys
+          console.log(keys);  // uid , unm , age
+          
+          // inserting every keys as a heading of table  
+          keys.forEach( (key) => {
+            let col_Head = document.createElement('th');
+            col_Head.textContent = key.toUpperCase();
+
+            row_Head.append(col_Head);
+          })
+          
+          myTab.append(thead);  // thead table mai daal diya
+
+
+          // now 1st row (heading row) ka kaam hogya
+
+          // inserting rows in tbody
+
+          const tbody = document.createElement('tbody');
+          
+          // sare user ko ek ek krke layege
+          userData.forEach((user)=>{
+            let row = myTab.insertRow();
+            const values = Object.values(user);  // user ki sari key ki values aagyi
+
+            values.forEach((val) => {  // har value ko column mai daalege 
+              let col = row.insertCell();
+              col.textContent = val ;
+            })
+
+            tbody.append(row);
+          })
+
+          myTab.append(tbody);
+
+          // console.log(myTab);
+
+          return myTab;
+        }
+
+
+        //  button click krne per
+        const btn = document.getElementById("myBtn");
+        btn.addEventListener('click' , () => {
+          const tabContainer = document.getElementById('tabContainer');
+          const table = createTable(userData); // createTable se puri table ban ke ayegi
+          tabContainer.append(table);
+        })
+
+    </script>
+  </body>
+</html>

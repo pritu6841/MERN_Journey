@@ -55,23 +55,58 @@
 
         //-----------------------------------------------------------------------------------------------------------
         
-        let cities = [
-            {name: "kanpur", pop : 20202020},
-            {name: "lkn", pop: 456789},
-            {name:"meerut", pop:123}
-        ]
-        let city = cities.filter(obj => {
-                if(obj.pop > 1000){ 
-                    
-                    return true
-                }
-        }
-        )
-        console.log(city)
+        // let cities = [
+        //     {name: "kanpur", pop : 20202020},
+        //     {name: "lkn", pop: 456789},
+        //     {name:"meerut", pop:123}
+        // ]
+        // let city = cities.filter(obj => {
+        //         if(obj.pop > 1000){ 
 
-        let c = [];
-        city.forEach(ele=> c.push(ele.name))
-        console.log(c)
+        //             return true
+        //         }
+        // }
+        // )
+        // console.log(city)
+
+        // let c = [];
+        // city.forEach(ele=> c.push(ele.name))
+        // console.log(c)
+
+        // let userData = [
+        //     {uid:104, unm:"ram", age:55},
+        //     {uid:106, unm:"shyam", age:35},
+        //     {uid:105, unm:"mohan", age:45}
+        // ]
+
+        // // all console here will only give the last modified array 
+
+        // // sort by age
+        // let r = [...userData].sort((ele1, ele2)=>{
+        //     return ele1.age - ele2.age; 
+        // })
+        // console.log(r)
+        // // sort by unm
+        //  r = [...userData].sort((ele1, ele2)=>{
+        //     return (ele1.unm.localeCompare(ele2.unm)); 
+        // })
+        // console.log(r)
+        // // sort by uid
+        // r = [...userData].sort((ele1, ele2)=>{
+        //     return ele1.uid - ele2.uid; 
+        // })
+        // console.log(r)
+
+
+        let products = [
+            {pn:"sw", price:488},
+            {pn:"ert", price:4},
+            {pn:"fgh", price:4},
+        ]
+
+        let r = products.reduce((sum, ele)=> sum + ele.price, 0)
+        console.log(r);
+        
     </script>
 </body>
 </html>

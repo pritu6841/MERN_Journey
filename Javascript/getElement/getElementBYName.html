@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="gender" value="Male">male
+    <input type="radio" name="gender" value="female">female <br><br>
+    <button id="myBtn">Button</button>
+
+    <hr>
+
+    <input type="checkbox" name="game" value="chess">chess
+    <input type="checkbox" name="game" value="cricket">cricket
+    <input type="checkbox" name="game" value="tennis">tennis
+    <input type="checkbox" name="game" value="football">footbal
+    <button id="myBtn2">button2</button>
+    
+    <button id="myBtn3">Select ALL</button>
+</body>
+<script>
+    const btn = document.getElementById('myBtn');
+    btn.addEventListener('click', ()=>{
+        const radiolist = document.getElementsByName('gender')
+        
+        radiolist.forEach((ele)=> {
+            console.log(ele.value)
+            console.log(ele.checked)})
+        })
+
+    const btn2 = document.getElementById('myBtn2');
+    btn2.addEventListener('click', ()=>{
+        const checkList = document.getElementsByName('game')
+        checkList.forEach((checks)=>{
+            console.log(checks.checked)
+
+        })
+    })
+    const btn3 = document.getElementById('myBtn3')
+    let ele = true
+    let isChecked = false
+    btn3.addEventListener('click', ()=>{
+        ele = ! ele
+        btn3.textContent = ele?"Select All":"Deselect All"
+        const checkList = document.getElementsByName('game')
+        // checkList.forEach((checks)=>{
+        //     checks.checked = !checks.checked
+        //     })
+
+        if(isChecked){
+            checkList.forEach((check)=> check.checked = false)
+        }
+        else checkList.forEach((check)=> check.checked = true)
+
+        isChecked = !isChecked
+    })
+</script>
+</html>

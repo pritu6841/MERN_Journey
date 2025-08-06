@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/4d8ad71260.js" crossorigin="anonymous"></script>
+    </head>
+
+<body>
+    <button id="myBtn">Button1</button>
+    <button id="myBtn2">Button2</button>
+    <div id="myDiv"></div>
+
+</body>
+<script>
+    const btn2 = document.getElementById('myBtn2')
+    btn2.addEventListener('click', () => {
+        const input = document.createElement('input');
+        input.setAttribute('type', 'date')
+        input.setAttribute('min', '2010-9-04')
+        input.setAttribute('name', 'inputEle')
+        console.log(input);
+
+        const div = document.getElementById('myDiv')
+        div.append(input)
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const btn = document.getElementById('myBtn')
+    btn.addEventListener('click', () => {
+        const h1 = document.createElement('h1');
+        console.log(h1)
+        h1.textContent = "lovely bebu"
+        h1.style.color = 'black'
+        h1.style.fontSize = '20px'
+
+        document.body.append(h1) //For adding element on the body
+        //append -> after the body or after the element
+        //prepend ->before the body or before the element
+    })
+</script>
+
+</html>

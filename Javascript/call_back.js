@@ -116,8 +116,77 @@ Note* so we need to pass comparator in the sort() function
     ii)Descending Order
         arr.sort((a,b)=>(b-a))
 
+--------------------------------------------------------------------------------------------------------------------------------------
+using normal sort 
+let userData = [
+            {uid:104, unm:"ram", age:55},
+            {uid:106, unm:"shyam", age:35},
+            {uid:105, unm:"mohan", age:45}
+        ]
 
+        // all console here will only give the last modified array 
+
+        // sort by age
+        userData.sort((ele1, ele2)=>{
+            return ele1.age - ele2.age; 
+        })
+        console.log(userData)
+        // sort by unm
+         userData.sort((ele1, ele2)=>{
+            return (ele1.unm. - ele2.unm); 
+        })
+        console.log(userData)
+        // sort by uid
+        userData.sort((ele1, ele2)=>{
+            return ele1.uid - ele2.uid; 
+        })
+        console.log(userData)
+
+        all console will print only the result of last sort statement
+------------------------------------------------------------------------------------------------------------------------------------
+for sorting the userData we need to use spread operator because normal sortig will affect the result 
+and we will always get the last console result on evey consol
+
+let userData = [
+            {uid:104, unm:"ram", age:55},
+            {uid:106, unm:"shyam", age:35},
+            {uid:105, unm:"mohan", age:45}
+        ]
+
+        // all console here will only give the last modified array 
+
+        // sort by age
+        let r = [...userData].sort((ele1, ele2)=>{
+            return ele1.age - ele2.age; 
+        })
+        console.log(r)
+        // sort by unm
+         r = [...userData].sort((ele1, ele2)=>{
+            return (ele1.unm.localeCompare(ele2.unm)); 
+        })
+        console.log(r)
+        // sort by uid
+        r = [...userData].sort((ele1, ele2)=>{
+            return ele1.uid - ele2.uid; 
+        })
+        console.log(r)
+
+---------------------------------------------------------------------------------------------------------------------------------------
+reduce() : reduce(function(prev, curr), initial val of perv)
+
+    let arr = [1, 1, 1, 1, 1, 2, 3]
+    let r = arr.reduce((sum, ele)=>sum *ele, 1)
+    console.log(r)
         
-    
+    //calculate total sum of products prize 
+    let products = [
+            {pn:"sw", price:488},
+            {pn:"ert", price:4},
+            {pn:"fgh", price:4},
+        ]
+
+        let r = products.reduce((sum, ele)=> sum + ele.price, 0)
+        console.log(r);
+        
 
 */

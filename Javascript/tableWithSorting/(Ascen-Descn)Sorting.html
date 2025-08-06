@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myBtn">Button</button>
+    <div  id="myDiv">
+    </div>
+    
+    <script>
+        let userData = [
+            {uid:1001, unm:"Ritu", age:45, gender:"female", department:"HR"},
+            {uid:1002, unm:"Bebu", age:23, gender:"male", department:"CEO"},
+            {uid:1003, unm:"shruti", age:10, gender:"female", department:"Finance"}
+        ]
+
+        sortCol = {} //global variable used as flag for evry key to toggle between true and false 
+
+        function createTable(data){
+            //table creation
+            const tab = document.createElement('table');
+            tab.setAttribute('border', '2px');
+            tab.setAttribute('width', '200px')
+            tab.setAttribute('align', 'center');
+            tab.setAttribute('bgcolor', 'pink');
+
+//--------------------------------------------thead creation started---------------------------------------------------------------------------------------------
+
+            const thead = document.createElement('thead');
+            const row = thead.insertRow(); //inserted a row inside the thead
+
+            const keys  = Object.keys(data[0]); //arr of all the key uid, unm, age
+            
+            //creating heading for thr table
+            keys.forEach((key)=>{
+                let col = document.createElement('th') //creating thead(column for the row of thead)
+                col.textContent = key.toUpperCase(); //putting the keys value inside every th(column)
+                col.style.backgroundColor = 'white'
+                col.style.cursor = 'pointer'
+                col.addEventListener('click',()=>{
+
+                    sortCol[key] = !sortCol[key]; //ye values ko flip krega true ya false krdega hr key ke liye
+                    //eg. sortCol[unm] = !sortCol[] -> sortCol[unm] = !undefined -> sortCol[unm] = !false -> sortCol[unm] = true;
+                    //ab jb agli baar aayega  to sortCol[unm] = !true -> sortCol[unm] = false aajaeya is trh se toggle hoga
+
+                    //yha pr jbhi hm thead ki kis heading ko touch krege to wo uske basis pr sort krdegi
+                    const sortedData = [...userData].sort((a,b)=>{
+
+                        if(typeof(a[key]) == 'number')
+                            return sortCol[key] ? a[key] - b[key] : b[key] - a[key] //agr sortCol[key] - true h to acscending order vrna descending order
+                        else if(typeof(a[key]) == 'string')
+                          return sortCol[key] ? a[key].localeCompare(b[key]) : b[key].localeCompare(a[key]) 
+                    });
+
+                    const sortedTable = createTable(sortedData);
+                    const tabContainer = document.getElementById('myDiv')
+                    tabContainer.innerHTML = "";
+                    tabContainer.append(sortedTable)
+                    
+                })
+                row.append(col) //append th(column inside the row)
+            })
+
+            tab.append(thead); //append the thead in the table
+
+//--------------------------------------------Starting the tbody of table--------------------------------------------------------------------------
+
+            let tbody = document.createElement('tbody'); //creating tbody
+            
+
+            data.forEach((user)=>{ //for traversing each object of userdata
+
+                const row = tbody.insertRow() //inserting row in for evry object in tbody
+                const values = Object.values(user) //arr of all the value of  each object eg. [1001, 'ritu', 45]
+
+                values.forEach((val)=>{
+                    let col = row.insertCell() //creating col for each value of object inside the row
+                    col.textContent = val //putting value inside the column
+                })
+
+            })
+
+            tab.append(tbody); //after complete creation of tbody append tbody inside the table
+            // console.log(userData)
+//-------------------------------------------------------------------------------------------------------------------------------------------
+            return tab;
+        }
+        let btn = document.getElementById('myBtn');
+        let tab = document.getElementById('myDiv');
+        btn.addEventListener('click', ()=>{
+            tab.append(createTable(userData))
+            
+        })
+
+    </script>
+</body>
+</html>

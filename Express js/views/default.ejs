@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr color="navy" size="5px">
+    <h1 align = "center">Application2 default page</h1>
+    <h3 align = "right"> Welcome <%= name%></h3>  <!--Agr kisi vlaue ko lege to hemsa '' ka sign use hoga-->
+    <h3 align = "right"> Welcome <%- name%></h3> 
+    <!-- use this ejs syntax for accepting <%= name%> any value  -->
+
+
+    <!-- <%= msg%> jb value leni ho -->
+    <!-- <%- msg%>Jb val -->
+    
+    
+    <hr color="green" size="5px">
+
+    <% if(isValid) { %>
+            
+        
+        <h4>Welcome to bhoot colony <%- msg%></h4>
+        <p style="background-color: aquamarine; padding: 30px;">  
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, commodi?   
+        </p>
+
+    <% } else{ %>
+
+        <h4>Welcome to chudail colony <%- msg%></h4>
+        <p style="background-color: maroon; padding: 30px;">  
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, commodi?   
+        </p>
+
+
+    <% }%>
+
+    
+</body>
+</html>

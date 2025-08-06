@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clsA{
+            background-color: navy;
+            color: wheat;
+        }
+        .clsB{
+            padding: 20px;
+            text-align: center;
+        }
+        .clsC{
+            background-color: pink;
+            color: black;
+
+        }
+    </style>
+    <script>
+        function myFun(){
+            const h1 = document.getElementById('myHeading');
+            console.log(h1);
+            let lst = h1.classList; //It return the list of classes attached in h1
+            lst.add('clsA')//adding new classes
+            console.log(lst);
+            
+            lst.toggle('clsB') //It toggles if the class exist or not exist
+
+            if(!lst.contains('clsB')){ //agr clsB class add nhi h to add krdo
+                lst.add('clsB')
+            }
+
+            console.log(lst.contains('clsC')); // It will return true or false wether on the basis of wether the classes already exist in the elemnt
+
+            lst.remove('clsB')//It remove the class from the classlist of that element
+
+            if(lst.contains('clsA')){
+                lst.replace('clsA', 'clsC') //To replace one class form another
+            }
+
+        }
+
+        
+    </script>
+</head>
+<body>
+    <!-- DOM elements -->
+     <h2 id="myHeading">
+        Heading 1
+     </h2>
+    <button type="button" onclick="myFun()">Button</button>
+    
+</body>
+</html>

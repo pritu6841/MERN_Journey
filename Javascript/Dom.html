@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFun(){
+            const h1 = document.getElementById('myHeading');
+            h1.textContent = "Hello Baby"
+            const p = document.getElementById('myPara');
+            p.textContent = h1.textContent //seting value to the pargraph first reading value from the h1
+
+            h1.style.backgroundColor = 'green'
+            h1.style.color = 'white'
+            h1.style.textAlign = 'center'
+            h1.style.padding = '20px 40px'
+            h1.style.border = '2px solid black  '
+        }
+
+        
+    </script>
+</head>
+<body>
+    <!-- DOM elements -->
+     <h2 id="myHeading">
+        Heading 1
+     </h2>
+     <p id="myPara"></p>
+     <button type="button" onclick="myFun()">Button</button>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/4d8ad71260.js" crossorigin="anonymous"></script>
+        <script>
+        function myFun(){
+            let pwd = document.getElementById('pwd');
+            let btn = document.getElementById('myBtn');
+
+            console.log(pwd)
+            pwd.type = (pwd.type == 'password')? 'text' : 'password'
+            // btn.textContent = (pwd.type == 'password')? 'show' : 'hide'
+
+            let lst = btn.classList;
+            if(lst.contains('fa-eye')){
+                lst.replace('fa-eye', 'fa-eye-slash')
+            }
+            else lst.replace('fa-eye-slash', 'fa-eye')
+            console.log(pwd.value.length);
+            console.log(pwd.type)
+            console.log(pwd.placeholder)
+            
+        }
+
+        
+    </script>
+</head>
+<body>
+    <!-- We're adding event listener dynamically -->
+
+    <input type="password" id="pwd" placeholder="hgj@gmail.com">
+    <button type="button" id="myBtn" class="fa-solid fa-eye" aria-hidden="false"> 
+        <!-- <i ></i> -->
+    </button> 
+    
+</body>
+<script>
+    const btn = document.getElementById('myBtn');
+    btn.addEventListener('click', myFun) //callback function kbhi call nhi krte h bs funtion ka referenece diya jata h
+
+    // btn.addEventListener('click', ()=>{
+    //     alert('hi..........');
+    // })
+
+    </script>
+</html>

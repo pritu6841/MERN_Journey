@@ -1,0 +1,10 @@
+1.index.js
+2.Routes  -
+    (i)adminRoutes.js
+    (ii)userRoutes.js
+3.Controllers-
+    (i)admin.controller.js
+    (ii)user.controller.js
+4.Views -
+    (i)default.ejs
+    
