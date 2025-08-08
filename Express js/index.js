@@ -1,4 +1,6 @@
 const express = require('express') //You are importing the Express toolkit into your program so you can use it to easily build a website or API.
+const formidable = require('express-formidable')
+const db = require('./dbConn')
 const app = express() // after calling express it wil create and return an app
 
 const HOST = 'localhost' //127.0.0.1
@@ -6,6 +8,7 @@ const PORT = 8000
 
 app.set('view engine', 'ejs') //set the veiw folder 
 app.use(express.static('public')) //now the browser will automatically recognize the public
+app.use(formidable())
 
 //------------------------------importing the /admin route form adminRoutes.js-------------------------------------------
 const adminRoutes = require('./routes/adminRoutes')

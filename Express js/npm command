@@ -1,5 +1,7 @@
 #npm init  - For file configuration(To create the package.json) //but it ask various things for creating it
 
+index.js -> router -> controller (file render hogi) -> views(partials)//for basic or reuasble component
+
 ye puchega - 
     
 ------------------------------------------------------------------------------------------------------------------------------------------------------

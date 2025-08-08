@@ -1,4 +1,5 @@
 1.index.js
+public
 2.Routes  -
     (i)adminRoutes.js
     (ii)userRoutes.js
@@ -7,4 +8,6 @@
     (ii)user.controller.js
 4.Views -
     (i)default.ejs
+
+5.Models
     

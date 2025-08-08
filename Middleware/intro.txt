@@ -1,0 +1,24 @@
+MIDDLEWARE -> IT works btw request and response
+                                      next()        next()                  (manipulate)next()              (Response)
+    (i) Request -> Middleware(Server)-------->Mid2--------->Mid3......->midn------------------> handler ------------------> client
+    - Request first goes to MIDDLEWARE in the server and can forward that request to the next middleware or  handler after manipulating he response is send to the client
+
+                                                (mnaipulate) sends as response
+    (ii) Request --------> Middleware(Server)-----------------------------------> client
+    - Middleware can also manipulate the req and and send it as reponse to the client
+    eg. 
+            app.use((req, res, next)=>{
+            console.log("Middleware 2");
+            res.send("Response send by middlware2") //yha pr middleware direct request send kr rha client ko. Isliye iske baad ka koi code execute nhi hoga
+            })
+
+
+
+    next() -> it sends req to next middleware or handler
+
+Types of Middleware
+
+(i)Application level Middleware -> jb koi reques aayegi to wo middleware me jaegi  
+(ii) Route level Middleware -> jb koi route ke liye request jaegi to us route ko execute krne ke phle
+(iii) Error Handling Middleware ->General Catch Handler(koi bhi error aayegi kisi bhi middleware , routes ya handler pr ye catch krlega)
+    eg. app.use((err, req, res, next)=>{})
